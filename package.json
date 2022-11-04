@@ -1,12 +1,12 @@
 {
-  "name": "sveltekit-vendure-commerce",
+  "name": "e-commerce-sveltekit-vendure",
   "version": "0.0.1",
   "description": "",
   "keywords": [],
   "author": {
-    "name": "Scott Spence",
-    "email": "yo@scottspence.dev",
-    "url": "https://scottspence.com"
+    "name": "Marko Rendulić",
+    "email": "marko.rendulic@gmail.com",
+    "url": "https://markorendulic.com"
   },
   "license": "MIT"
 }
