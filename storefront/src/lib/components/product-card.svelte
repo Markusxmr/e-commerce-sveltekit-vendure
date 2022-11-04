@@ -9,7 +9,7 @@
   <a data-sveltekit-prefetch href={`/product/${item.slug}`} class="">
     <img
       class="object-cover rounded-2xl"
-      src={`${item.productAsset.preview}?w=200&h=200`}
+      src={`${item.productAsset.preview}?w=300&h=350`}
       alt={item.productName}
     />
   </a>

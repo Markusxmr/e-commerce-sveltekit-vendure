@@ -49,7 +49,7 @@
     <Filters {facetValues} />
   {/if}
   <div
-    class="grid gap-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5"
+    class="grid gap-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4"
   >
     {#if products?.length >= 1}
       {#each products as item}

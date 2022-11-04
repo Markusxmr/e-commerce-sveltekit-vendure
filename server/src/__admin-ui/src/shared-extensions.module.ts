@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { WebhookNavModule } from './extensions/a579fda6190f0bb6a39375e91ffa3383f747f4a02db69374a3c61fa9bc695351/webhook-nav.module';
-import { StockWidgetSharedModule } from './extensions/cb5ea0370e0ee9f3a95d54ffd535cd2678ebfe27c83a70b996ef50cb56da664a/stock-widget.shared-module';
-import { MetricsWidgetSharedModule } from './extensions/2532dd5f25f5869aacdc1b25dc39696795275fe644e266be9897dccef3da83d1/metrics-widget.shared-module';
+import { WebhookNavModule } from './extensions/9dbb293b1a40f7bba9d6421554a5565ad947f91ae5302e38bf850010d402a7d7/webhook-nav.module';
+import { StockWidgetSharedModule } from './extensions/e6aa42fdfd050889816d83874033491135689b7b407863ac7542b973a8e11982/stock-widget.shared-module';
+import { MetricsWidgetSharedModule } from './extensions/0ab47e5b3620d5627c645fa43b307ee394eed975b0f259549f1327baa62ff4e4/metrics-widget.shared-module';
 
 
 @NgModule({

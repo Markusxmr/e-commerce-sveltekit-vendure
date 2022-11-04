@@ -1,4 +1,4 @@
 export const extensionRoutes = [  {
     path: 'extensions/webhook',
-    loadChildren: () => import('./extensions/a579fda6190f0bb6a39375e91ffa3383f747f4a02db69374a3c61fa9bc695351/webhook.module').then(m => m.WebhookModule),
+    loadChildren: () => import('./extensions/9dbb293b1a40f7bba9d6421554a5565ad947f91ae5302e38bf850010d402a7d7/webhook.module').then(m => m.WebhookModule),
   }];
