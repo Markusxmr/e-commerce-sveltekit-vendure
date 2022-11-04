@@ -3,3 +3,8 @@ dist
 static/assets
 static/email/test-emails
 .env
+.env.production
+yarn-error.log
+vendure.sqlite
+vendure.sqlite-shm
+vendure.sqlite-wal
