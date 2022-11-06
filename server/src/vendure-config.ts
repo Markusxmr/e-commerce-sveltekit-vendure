@@ -23,17 +23,18 @@ import 'dotenv/config';
 import path from 'path';
 import { WebhookPlugin } from 'vendure-plugin-webhook';
 import { StockMonitoringPlugin, createLowStockEmailHandler } from 'vendure-plugin-stock-monitoring';
-import { MetricsPlugin } from "vendure-plugin-metrics";
+// import { MetricsPlugin } from "vendure-plugin-metrics";
 import { StripePlugin } from '@vendure/payments-plugin/package/stripe';
 import { BraintreePlugin } from '@vendure/payments-plugin/package/braintree';
 import { Environment } from 'braintree';
 
 
 const IS_DEV = process.env.APP_ENV === 'dev';
+const PORT = process.env.PORT ?? 3000;
 
 export const config: VendureConfig = {
     apiOptions: {
-        port: 3000,
+        port: Number(PORT),
         adminApiPath: 'admin-api',
         shopApiPath: 'shop-api',
         // The following options are useful in development mode,
@@ -143,7 +144,7 @@ export const config: VendureConfig = {
                 extensions: [
                     WebhookPlugin.ui,
                     StockMonitoringPlugin.ui,
-                    MetricsPlugin.ui
+                    // MetricsPlugin.ui
                 ],
             }),
         }),
@@ -154,7 +155,7 @@ export const config: VendureConfig = {
             // section below for details)
             storeCustomersInBraintree: true,
         }),
-        MetricsPlugin,
+        // MetricsPlugin,
         WebhookPlugin.init({
             httpMethod: 'POST',
             /**
