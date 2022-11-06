@@ -1,5 +1,6 @@
 node_modules
 dist
+dist.zip
 static/assets
 static/email/test-emails
 .env
