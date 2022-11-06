@@ -1,5 +1,7 @@
 <script lang="ts">
   import CountrySelect from './country-select.svelte'
+  const inputClass =
+    'form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none mt-3'
 </script>
 
 <form
@@ -28,7 +30,7 @@
           id="fullName"
           name="fullName"
           autocomplete="given-name"
-          class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-primary-500 focus:border-primary-500 sm:text-sm"
+          class={inputClass}
           value=""
         />
       </div>
@@ -43,7 +45,7 @@
           type="text"
           name="company"
           id="company"
-          class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-primary-500 focus:border-primary-500 sm:text-sm"
+          class={inputClass}
           value=""
         />
       </div>
@@ -59,7 +61,7 @@
           name="streetLine1"
           id="streetLine1"
           autocomplete="street-address"
-          class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-primary-500 focus:border-primary-500 sm:text-sm"
+          class={inputClass}
           value=""
         />
       </div>
@@ -75,7 +77,7 @@
           type="text"
           name="streetLine2"
           id="streetLine2"
-          class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-primary-500 focus:border-primary-500 sm:text-sm"
+          class={inputClass}
           value=""
         />
       </div>
@@ -91,7 +93,7 @@
           name="city"
           id="city"
           autocomplete="address-level2"
-          class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-primary-500 focus:border-primary-500 sm:text-sm"
+          class={inputClass}
           value=""
         />
       </div>
@@ -109,7 +111,7 @@
           name="province"
           id="province"
           autocomplete="address-level1"
-          class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-primary-500 focus:border-primary-500 sm:text-sm"
+          class={inputClass}
           value=""
         />
       </div>
@@ -126,7 +128,7 @@
           name="postalCode"
           id="postalCode"
           autocomplete="postal-code"
-          class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-primary-500 focus:border-primary-500 sm:text-sm"
+          class={inputClass}
           value=""
         />
       </div>
@@ -142,7 +144,7 @@
           name="phoneNumber"
           id="phoneNumber"
           autocomplete="tel"
-          class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-primary-500 focus:border-primary-500 sm:text-sm"
+          class={inputClass}
           value=""
         />
       </div>

@@ -1,8 +1,11 @@
 <script>
+  import PaymentIcon from '$lib/components/icons/payment.svelte'
   import ContactInfo from './components/shipping/contact-info.svelte'
   import DeliveryMethod from './components/shipping/delivery-method.svelte'
   import OrderSummary from './components/shipping/order-summary.svelte'
   import ShippingInfo from './components/shipping/shipping-info.svelte'
+
+  let active = 'blue'
 </script>
 
 <main class="">
@@ -17,8 +20,10 @@
       >
         <ol role="list" class="flex space-x-4 justify-center">
           <li class="flex items-center">
-            <span aria-current="page" class="text-primary-600"
-              >Shipping</span
+            <span
+              aria-current="page"
+              class="text-primary-600"
+              style="color: {active} !important">Shipping</span
             ><svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 20 20"
@@ -59,18 +64,9 @@
               type="button"
               disabled=""
               class="bg-gray-400 flex w-full items-center justify-center space-x-2 mt-24 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
-              ><svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                aria-hidden="true"
-                class="w-5 h-5"
-                ><path
-                  fill-rule="evenodd"
-                  d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z"
-                  clip-rule="evenodd"
-                /></svg
-              ><span>Proceed to payment</span></button
+            >
+              <PaymentIcon />
+              <span>Proceed to payment</span></button
             >
           </div>
         </div>

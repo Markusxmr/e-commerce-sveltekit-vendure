@@ -1,9 +1,14 @@
+<script>
+  import CheckmarkIcon from '$lib/components/icons/checkmark.svelte'
+</script>
+
 <div class="mt-10 border-t border-gray-200 pt-10">
   <div
     id="headlessui-radiogroup-25"
     role="radiogroup"
     aria-labelledby="headlessui-label-26"
   >
+    <!-- svelte-ignore a11y-label-has-associated-control -->
     <label
       class="text-lg font-medium text-gray-900"
       id="headlessui-label-26"
@@ -45,21 +50,30 @@
         tabindex="-1"
         aria-labelledby="headlessui-label-31"
         aria-describedby="headlessui-description-32"
+        style="display: grid; grid-template-columns: 1fr 20px;"
       >
-        <span class="flex-1 flex"
-          ><span class="flex flex-col"
+        <span class="flex-1 flex">
+          <span class="flex flex-col"
             ><span
               class="block text-sm font-medium text-gray-900"
-              id="headlessui-label-31">Express Shipping</span
-            ><span
+              id="headlessui-label-31"
+            >
+              Express Shipping
+            </span>
+            <span
               class="mt-6 text-sm font-medium text-gray-900"
-              id="headlessui-description-32">$10.00</span
-            ></span
-          ></span
-        ><span
+              id="headlessui-description-32"
+            >
+              $10.00
+            </span>
+          </span>
+        </span>
+        <span
           class="border-2 border-transparent absolute -inset-px rounded-lg pointer-events-none"
           aria-hidden="true"
-        />
+        >
+          <CheckmarkIcon />
+        </span>
       </div>
     </div>
   </div>

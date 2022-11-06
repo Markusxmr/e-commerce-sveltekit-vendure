@@ -1,9 +1,14 @@
+<script lang="ts">
+  const inputClass =
+    'form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none mt-3'
+</script>
+
 <div>
   <h2 class="text-lg font-medium text-gray-900">
     Contact information
   </h2>
   <form
-    class="mb-3 xl:w-96"
+    class="mb-3"
     method="post"
     action="/api/active-order"
     enctype="application/x-www-form-urlencoded"
@@ -26,7 +31,7 @@
           id="emailAddress"
           name="emailAddress"
           autocomplete="email"
-          class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-primary-500 focus:border-primary-500 sm:text-sm"
+          class={inputClass}
           value=""
         />
       </div>
@@ -46,7 +51,7 @@
             id="firstName"
             name="firstName"
             autocomplete="given-name"
-            class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-primary-500 focus:border-primary-500 sm:text-sm"
+            class={inputClass}
             value=""
           />
         </div>
@@ -63,7 +68,7 @@
             id="lastName"
             name="lastName"
             autocomplete="family-name"
-            class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-primary-500 focus:border-primary-500 sm:text-sm"
+            class={inputClass}
             value=""
           />
         </div>

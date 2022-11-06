@@ -31,21 +31,21 @@
               action="/checkout"
               enctype="application/x-www-form-urlencoded"
             >
-              <label for="quantity-7" class="mr-2">Quantity</label
-              ><select
+              <label for="quantity-7" class="mr-2">Quantity</label>
+              <select
                 id="quantity-7"
                 name="quantity-7"
-                class="max-w-full rounded-md border border-gray-300 py-1.5 text-base leading-5 font-medium text-gray-700 text-left shadow-sm focus:outline-none focus:ring-1 focus:ring-primary-500 focus:border-primary-500 sm:text-sm"
-                ><option value="1">1</option><option value="2"
-                  >2</option
-                ><option value="3">3</option><option value="4"
-                  >4</option
-                ><option value="5">5</option><option value="6"
-                  >6</option
-                ><option value="7">7</option><option value="8"
-                  >8</option
-                ></select
+                class="select select-bordered select-primary w-full max-w-xs mb-2"
               >
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+              </select>
             </form>
             <div class="flex-1" />
             <div class="flex">

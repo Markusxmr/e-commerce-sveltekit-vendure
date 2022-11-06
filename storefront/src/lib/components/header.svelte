@@ -24,7 +24,7 @@
           Exclusive: Get your own<!-- -->
           <!-- svelte-ignore security-anchor-rel-noreferrer -->
           <a
-            href="https://github.com/vendure-ecommerce/storefront-remix-starter"
+            href="https://github.com/Markusxmr/e-commerce-sveltekit-vendure"
             target="_blank"
             class="underline">FREE storefront starter kit</a
           >
