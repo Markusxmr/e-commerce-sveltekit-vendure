@@ -2661,9 +2661,6 @@ enum Permission {
   """Grants permission to read Zone"""
   ReadZone
 
-  """Allows setting a webhook URL"""
-  SetWebhook
-
   """SuperAdmin has unrestricted access to all operations"""
   SuperAdmin
 

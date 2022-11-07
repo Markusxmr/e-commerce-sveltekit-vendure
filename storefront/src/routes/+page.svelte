@@ -1,8 +1,8 @@
 <script lang="ts" context="module">
   import {
-  GQL_GetCollections,
-  GQL_GetCurrencyCode,
-  GQL_GetTopSellers
+    GQL_GetCollections,
+    GQL_GetCurrencyCode,
+    GQL_GetTopSellers,
   } from '$houdini'
   import CategoryBanner from '$lib/components/category-banner.svelte'
   import ProductCard from '$lib/components/product-card.svelte'
@@ -13,9 +13,10 @@
   let currencyCode =
     $GQL_GetCurrencyCode?.data?.activeChannel?.currencyCode
 
-  $: collections = $GQL_GetCollections.data?.collections.items.filter(
-    item => item.parent.name === '__root_collection__'
-  ) ?? []
+  $: collections =
+    $GQL_GetCollections.data?.collections.items.filter(
+      item => item.parent.name === '__root_collection__'
+    ) ?? []
 </script>
 
 <CategoryBanner {collections} />
