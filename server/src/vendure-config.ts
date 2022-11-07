@@ -31,6 +31,7 @@ import { Environment } from 'braintree';
 
 const IS_DEV = process.env.APP_ENV === 'dev';
 const PORT = process.env.PORT ?? 3000;
+const ASSET_URL_PREFIX = process.env.ASSET_URL_PREFIX;
 
 export const config: VendureConfig = {
     apiOptions: {
@@ -83,7 +84,7 @@ export const config: VendureConfig = {
             // For local dev, the correct value for assetUrlPrefix should
             // be guessed correctly, but for production it will usually need
             // to be set manually to match your production url.
-            assetUrlPrefix: IS_DEV ? undefined : 'https://www.my-shop.com/assets',
+            assetUrlPrefix: IS_DEV ? undefined : ASSET_URL_PREFIX,
         }),
         DefaultJobQueuePlugin.init({ useDatabaseForBuffer: true }),
         DefaultSearchPlugin.init({ bufferUpdates: false, indexStockStatus: true }),
@@ -109,22 +110,22 @@ export const config: VendureConfig = {
                 emailAddressChangeHandler,
                 // Dynamically get email recipients based on the event
                 // and send an email when stock drops below 10
-                createLowStockEmailHandler({
-                    threshold: 10,
-                    subject: "Stock of variants below 10",
-                    emailRecipients: async (injector, event) => {
-                        // Dynamically resolve email recipients with the injector and event
-                        // @ts-ignore
-                        const recipients = await injector.get(MyService).getAdminsForChannel(event?.ctx);
-                        return recipients;
-                    }
-                }),
-                // Send emails to two static addresses when stock drops below 99
-                createLowStockEmailHandler({
-                    threshold: 99,
-                    subject: "Stock of variants below 99",
-                    emailRecipients: ["marko.rendulic@gmail.com", "terra.core.tc@gmail.com"]
-                })
+                // createLowStockEmailHandler({
+                //     threshold: 10,
+                //     subject: "Stock of variants below 10",
+                //     emailRecipients: async (injector, event) => {
+                //         // Dynamically resolve email recipients with the injector and event
+                //         // @ts-ignore
+                //         const recipients = await injector.get(MyService).getAdminsForChannel(event?.ctx);
+                //         return recipients;
+                //     }
+                // }),
+                // // Send emails to two static addresses when stock drops below 99
+                // createLowStockEmailHandler({
+                //     threshold: 99,
+                //     subject: "Stock of variants below 99",
+                //     emailRecipients: ["marko.rendulic@gmail.com", "terra.core.tc@gmail.com"]
+                // })
             ],
             templatePath: path.join(__dirname, '../static/email/templates'),
             globalTemplateVars: {
@@ -139,14 +140,14 @@ export const config: VendureConfig = {
         AdminUiPlugin.init({
             route: 'admin',
             port: 3002,
-            app: compileUiExtensions({
-                outputPath: path.join(__dirname, '__admin-ui'),
-                extensions: [
-                    WebhookPlugin.ui,
-                    StockMonitoringPlugin.ui,
-                    // MetricsPlugin.ui
-                ],
-            }),
+            // app: compileUiExtensions({
+            //     outputPath: path.join(__dirname, '__admin-ui'),
+            //     extensions: [
+            //         WebhookPlugin.ui,
+            //         StockMonitoringPlugin.ui,
+            //         // MetricsPlugin.ui
+            //     ],
+            // }),
         }),
         BraintreePlugin.init({
             environment: Environment.Sandbox,
@@ -156,37 +157,37 @@ export const config: VendureConfig = {
             storeCustomersInBraintree: true,
         }),
         // MetricsPlugin,
-        WebhookPlugin.init({
-            httpMethod: 'POST',
-            /**
-             * Optional: 'delay' waits and deduplicates events for 3000ms.
-             * If 4 events were fired for the same channel within 3 seconds,
-             * only 1 webhook call will be sent
-             */
-            delay: 3000,
-            events: [ProductEvent, ProductVariantEvent],
-            /**
-             * Optional: 'requestFn' allows you to send custom headers
-             * and a custom body with your webhook call.
-             * By default, the webhook POST will have an empty body
-             */
-            requestFn: async (
-                event: ProductEvent | ProductVariantEvent,
-                injector: Injector
-            ) => {
-                // Get data via injector and build your request headers and body
-                const { id } = await injector
-                    .get(ChannelService)
-                    .getChannelFromToken(event.ctx.channel.token);
-                return {
-                    headers: { test: '1234' },
-                    body: JSON.stringify({ createdAt: event.createdAt, channelId: id }),
-                };
-            },
-        }),
-        StockMonitoringPlugin.init({
-            threshold: 10,
-        }),
+        // WebhookPlugin.init({
+        //     httpMethod: 'POST',
+        //     /**
+        //      * Optional: 'delay' waits and deduplicates events for 3000ms.
+        //      * If 4 events were fired for the same channel within 3 seconds,
+        //      * only 1 webhook call will be sent
+        //      */
+        //     delay: 3000,
+        //     events: [ProductEvent, ProductVariantEvent],
+        //     /**
+        //      * Optional: 'requestFn' allows you to send custom headers
+        //      * and a custom body with your webhook call.
+        //      * By default, the webhook POST will have an empty body
+        //      */
+        //     requestFn: async (
+        //         event: ProductEvent | ProductVariantEvent,
+        //         injector: Injector
+        //     ) => {
+        //         // Get data via injector and build your request headers and body
+        //         const { id } = await injector
+        //             .get(ChannelService)
+        //             .getChannelFromToken(event.ctx.channel.token);
+        //         return {
+        //             headers: { test: '1234' },
+        //             body: JSON.stringify({ createdAt: event.createdAt, channelId: id }),
+        //         };
+        //     },
+        // }),
+        // StockMonitoringPlugin.init({
+        //     threshold: 10,
+        // }),
         StripePlugin.init({
             apiKey: process.env.STRIPE_SECRET_KEY ?? "",
             webhookSigningSecret: process.env.STRIPE_WEBHOOK_SIGNING_SECRET ?? "",
