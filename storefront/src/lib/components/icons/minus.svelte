@@ -1,6 +1,10 @@
+<script lang="ts">
+  export let className = 'h-3 w-3'
+</script>
+
 <svg
   xmlns="http://www.w3.org/2000/svg"
-  class="h-3 w-3"
+  class={className}
   viewBox="0 0 20 20"
   fill="currentColor"
 >

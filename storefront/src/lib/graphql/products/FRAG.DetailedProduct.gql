@@ -1,0 +1,34 @@
+fragment DetailedProduct on Product {
+  id
+  name
+  description
+  collections {
+    id
+    slug
+    name
+    breadcrumbs {
+      id
+      name
+      slug
+    }
+  }
+  facetValues {
+    facet {
+      id
+      code
+      name
+    }
+    id
+    code
+    name
+  }
+  featuredAsset {
+    ...Asset
+  }
+  assets {
+    ...Asset
+  }
+  variants {
+    ...Variant
+  }
+}

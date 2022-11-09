@@ -20,7 +20,7 @@
       </h1>
     </div>
   </div>
-{:else if key.includes(`/product/`) || key.includes(`/category/`) || key.includes(`/sign-in`) || key.includes(`/sign-up`) || key.includes(`/checkout`)}
+{:else if key.includes(`/products/`) || key.includes(`/collections/`) || key.includes(`/sign-in`) || key.includes(`/sign-up`) || key.includes(`/checkout`)}
   <div />
 {:else}
   <div

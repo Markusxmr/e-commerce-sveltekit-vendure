@@ -1,0 +1,10 @@
+query EligibleShippingMethods {
+  eligibleShippingMethods {
+    id
+    name
+    description
+    metadata
+    price
+    priceWithTax
+  }
+}

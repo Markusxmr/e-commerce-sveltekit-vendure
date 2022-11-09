@@ -1,0 +1,29 @@
+query GetCollection($slug: String, $id: ID) {
+  collection(slug: $slug, id: $id) {
+    id
+    name
+    parent {
+      id
+      slug
+      name
+    }
+    breadcrumbs {
+      id
+      name
+      slug
+    }
+    children {
+      id
+      name
+      slug
+      breadcrumbs {
+        id
+        name
+        slug
+      }
+      featuredAsset {
+        preview
+      }
+    }
+  }
+}

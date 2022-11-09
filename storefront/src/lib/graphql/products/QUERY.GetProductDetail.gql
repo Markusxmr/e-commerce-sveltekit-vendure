@@ -1,0 +1,5 @@
+query GetProductDetail($slug: String, $id: ID) {
+  product(slug: $slug, id: $id) {
+    ...DetailedProduct
+  }
+}

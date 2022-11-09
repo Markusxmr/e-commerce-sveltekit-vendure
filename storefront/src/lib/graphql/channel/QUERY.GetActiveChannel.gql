@@ -1,0 +1,6 @@
+query GetActiveChannel {
+  activeChannel {
+    id
+    currencyCode
+  }
+}

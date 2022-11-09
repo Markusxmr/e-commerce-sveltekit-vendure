@@ -3,6 +3,7 @@ import type { RequestHandlerArgs } from '$houdini'
 import { HoudiniClient } from '$houdini'
 
 const AUTH_TOKEN_KEY = 'auth_token'
+console.log(import.meta.env.VITE_GRAPHQL_ENDPOINT);
 
 async function fetchQuery({
   fetch,

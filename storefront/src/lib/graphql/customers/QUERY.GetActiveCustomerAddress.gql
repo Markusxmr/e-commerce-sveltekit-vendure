@@ -1,0 +1,22 @@
+query GetActiveCustomerAddresses {
+  activeCustomer {
+    id
+    addresses {
+      id
+      company
+      fullName
+      streetLine1
+      streetLine2
+      city
+      province
+      postalCode
+      country {
+        id
+        code
+        name
+      }
+      phoneNumber
+      defaultShippingAddress
+    }
+  }
+}

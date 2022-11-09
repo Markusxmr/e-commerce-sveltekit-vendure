@@ -1,0 +1,10 @@
+query EligiblePaymentMethods {
+  eligiblePaymentMethods {
+    id
+    code
+    name
+    description
+    eligibilityMessage
+    isEligible
+  }
+}

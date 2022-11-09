@@ -1,5 +1,5 @@
 
-import { GQL_SearchProducts } from '$houdini'
+import { CachePolicy, GQL_SearchProducts } from '$houdini'
 import type { Load } from '@sveltejs/kit'
 import { filtersStore } from '$stores/filters'
 import { get } from 'svelte/store'
@@ -9,6 +9,7 @@ export const load: Load = async event => {
 
     await GQL_SearchProducts.fetch({
         event,
+        policy: CachePolicy.CacheAndNetwork,
         variables: {
             input: {
                 collectionSlug: '',

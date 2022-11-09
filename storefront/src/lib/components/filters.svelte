@@ -47,9 +47,9 @@
 </script>
 
 <div class="p-2 mr-6 w-1/5 h-full bordered card">
-  <div class="form-control">
+  <div class="form-control" style="width: 100%; position: relative">
     {#each facetValuesGrouped as { values, name }}
-      <p class="capitalize font-medium pl-1">{name}</p>
+      <p class="capitalize font-medium pl-1">{name?.toUpperCase()}</p>
       {#each values as valueItem}
         {@const name =
           [
@@ -58,16 +58,18 @@
             `Sports & Outdoor`, // TODO: make this dynamic
           ].indexOf(valueItem.name) > -1
             ? ``
-            : valueItem.name}
+            : valueItem?.name}
         {#if name.length > 0}
           <label class="cursor-pointer label py-1">
+            <br />
             <span class="label-text">{valueItem.name}</span>
             <input
               bind:group={filterValues}
               value={valueItem.id}
               type="checkbox"
               checked
-              class="checkbox checkbox-sm checkbox-primary"
+              class="checkbox checkbox-sm checkbox-primary pull-right"
+              style="position:absolute; right: 0px; cursor: pointer;"
             />
           </label>
         {/if}

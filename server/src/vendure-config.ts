@@ -28,7 +28,6 @@ import { StripePlugin } from '@vendure/payments-plugin/package/stripe';
 import { BraintreePlugin } from '@vendure/payments-plugin/package/braintree';
 import { Environment } from 'braintree';
 
-
 const IS_DEV = process.env.APP_ENV === 'dev';
 const PORT = process.env.PORT ?? 3000;
 const ASSET_URL_PREFIX = process.env.ASSET_URL_PREFIX;
@@ -69,7 +68,7 @@ export const config: VendureConfig = {
         synchronize: true,
         migrations: [path.join(__dirname, './migrations/*.+(js|ts)')],
         logging: false,
-        database: path.join(__dirname, '../vendure.sqlite'),
+        database: path.join(__dirname, '../shop.sqlite'),
     },
     paymentOptions: {
         paymentMethodHandlers: [dummyPaymentHandler],
@@ -132,9 +131,9 @@ export const config: VendureConfig = {
                 // The following variables will change depending on your storefront implementation.
                 // Here we are assuming a storefront running at http://localhost:8080.
                 fromAddress: '"shop name" <noreply@get-some.org>',
-                verifyEmailAddressUrl: 'http://localhost:8080/verify',
-                passwordResetUrl: 'http://localhost:8080/password-reset',
-                changeEmailAddressUrl: 'http://localhost:8080/verify-email-address-change'
+                verifyEmailAddressUrl: 'http://localhost:3001/verify',
+                passwordResetUrl: 'http://localhost:3001/password-reset',
+                changeEmailAddressUrl: 'http://localhost:3001/verify-email-address-change'
             },
         }),
         AdminUiPlugin.init({

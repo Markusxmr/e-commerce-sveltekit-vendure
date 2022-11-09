@@ -2,14 +2,15 @@
   import { goto } from '$app/navigation'
   import { GQL_GetActiveOrder } from '$houdini'
   import { browser } from '$app/environment'
-  import Cart from '$lib/components/cart.svelte'
-  import Footer from '$lib/components/footer.svelte'
+  import Cart from '$lib/components/cart/cart.svelte'
   import Hero from '$lib/components/hero.svelte'
+  import Footer from '$lib/components/footer/footer.svelte'
   import PageTransition from '$lib/components/page-transition.svelte'
   import { onMount } from 'svelte'
   import '../app.css'
   import { userLocale } from '../stores/locale'
-  import Header from '$lib/components/header.svelte'
+  import Header from '$lib/components/header/header.svelte'
+  import StripeProvider from '$lib/stripe/stripe-provider.svelte'
 
   export let data
   $: ({ key } = data)
@@ -27,11 +28,13 @@
 </svelte:head>
 
 <PageTransition refresh={key}>
-  <Cart />
-  <Header />
-  <Hero {key} />
-  <main class="container-fluid max-w-6xl mx-auto px-4 mb-20">
-    <slot />
-  </main>
-  <Footer />
+  <StripeProvider>
+    <Header />
+    <Hero {key} />
+    <main class="">
+      <slot />
+    </main>
+    <Cart />
+    <Footer />
+  </StripeProvider>
 </PageTransition>

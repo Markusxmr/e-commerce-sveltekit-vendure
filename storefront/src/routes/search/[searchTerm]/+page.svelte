@@ -2,7 +2,7 @@
   import { GQL_GetCurrencyCode, GQL_SearchProducts } from '$houdini'
   import Filters from '$lib/components/filters.svelte'
   import SadFace from '$lib/components/icons/sad-face.svelte'
-  import ProductCard from '$lib/components/product-card.svelte'
+  import ProductCard from '$lib/components/products/product-card.svelte'
   import { filtersStore } from '$stores/filters'
   import { get } from 'svelte/store'
 

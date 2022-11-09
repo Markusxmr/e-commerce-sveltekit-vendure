@@ -1,0 +1,11 @@
+mutation SetOrderShippingMethod($shippingMethodId: ID!) {
+  setOrderShippingMethod(shippingMethodId: $shippingMethodId) {
+    ... on Order {
+      ...OrderDetail
+    }
+    ... on ErrorResult {
+      errorCode
+      message
+    }
+  }
+}

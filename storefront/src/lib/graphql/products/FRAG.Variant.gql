@@ -1,0 +1,23 @@
+fragment Variant on ProductVariant {
+  id
+  name
+  options {
+    code
+    name
+  }
+  currencyCode
+  price
+  priceWithTax
+  sku
+  featuredAsset {
+    ...Asset
+  }
+  facetValues {
+    id
+    name
+    facet {
+      id
+      name
+    }
+  }
+}

@@ -14,7 +14,7 @@ const config = {
         "houdini-svelte": {
             client: "./src/lib/graphql/client"
         }
-    },
+    }
 }
 
 export default config;

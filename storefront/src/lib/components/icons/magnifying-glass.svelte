@@ -1,8 +1,12 @@
+<script lang="ts">
+  export let className = 'inline-block w-6 h-6 stroke-current'
+</script>
+
 <svg
   xmlns="http://www.w3.org/2000/svg"
   fill="none"
   viewBox="0 0 24 24"
-  class="inline-block w-6 h-6 stroke-current"
+  class={className}
 >
   <path
     stroke-linecap="round"

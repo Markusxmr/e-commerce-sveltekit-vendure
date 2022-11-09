@@ -1,0 +1,11 @@
+mutation RemoveOrderLine($orderLineId: ID!) {
+  removeOrderLine(orderLineId: $orderLineId) {
+    ... on Order {
+      ...OrderDetail
+    }
+    ... on ErrorResult {
+      errorCode
+      message
+    }
+  }
+}

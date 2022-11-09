@@ -1,0 +1,27 @@
+query GetCollections($options: CollectionListOptions) {
+  collections(options: $options) {
+    items {
+      id
+      name
+      slug
+      parent {
+        id
+        slug
+        name
+      }
+      children {
+        id
+        name
+        breadcrumbs {
+          id
+          name
+          slug
+        }
+      }
+      featuredAsset {
+        id
+        preview
+      }
+    }
+  }
+}

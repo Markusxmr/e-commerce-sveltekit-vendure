@@ -1,0 +1,19 @@
+fragment ListedProduct on SearchResult {
+  productId
+  productName
+  slug
+  productAsset {
+    id
+    preview
+  }
+  currencyCode
+  priceWithTax {
+    ... on PriceRange {
+      min
+      max
+    }
+    ... on SinglePrice {
+      value
+    }
+  }
+}

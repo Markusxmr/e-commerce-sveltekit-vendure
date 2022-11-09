@@ -6,6 +6,6 @@ static/email/test-emails
 .env
 .env.production
 yarn-error.log
-vendure.sqlite
-vendure.sqlite-shm
-vendure.sqlite-wal
+shop.sqlite
+shop.sqlite-shm
+shop.sqlite-wal
