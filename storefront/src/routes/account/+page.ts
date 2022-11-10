@@ -8,10 +8,9 @@ export const load = async (event) => {
     const { data } = await GQL_GetActiveCustomer.fetch({ event })
     const activeCustomer = data?.activeCustomer;
 
-    console.log(activeCustomer);
-
     if (!activeCustomer) {
-        return redirect(304, '/sign-in');
+        throw redirect(307, '/sign-in');
     }
-    return json({ activeCustomer });
+
+    return { activeCustomer };
 }

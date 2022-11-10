@@ -15,6 +15,5 @@
     "src/**/*.js",
     "src/**/*.svelte",
     "src/lib/utils/index.ts",
-    "src/hooks/hooks.server.ts"
-, "src/routes/account/api/auction/+server.ts"  ]
+    "src/hooks/hooks.server.ts"]
 }

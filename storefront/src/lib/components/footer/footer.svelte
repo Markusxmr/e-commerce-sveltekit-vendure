@@ -92,18 +92,25 @@
             </ul>
           </div>
         </div>
-        <div class="md:grid md:grid-cols-2 md:gap-8">
+        <div class="md:grid md:grid-cols-2 md:gap-4">
           <div>
-            <span class="footer-title">Social</span>
-            <div class="grid grid-flow-col gap-4">
+            <h3
+              class="text-sm font-semibold text-gray-500 tracking-wider uppercase"
+            >
+              Social
+            </h3>
+            <div
+              class="grid grid-flow-col gap-4 "
+              style="display: grid; grid-template-columns: 1fr 1fr 1fr; width: 75px"
+            >
               <a href="/">
-                <Twitter />
+                <Twitter className={'text-gray-500'} />
               </a>
               <a href="/">
-                <YouTube />
+                <YouTube className={'text-gray-500'} />
               </a>
               <a href="/">
-                <Facebook />
+                <Facebook className={'text-gray-500'} />
               </a>
             </div>
           </div>

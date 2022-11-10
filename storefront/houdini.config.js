@@ -8,6 +8,9 @@ const config = {
     DateTime: {
       type: 'string',
     },
+    JSON: {
+      type: 'object'
+    }
   },
   disableMasking: true,
     plugins: {

@@ -2,7 +2,14 @@
   export let data
 
   let { activeCustomer } = data
-  const { firstName, lastName } = activeCustomer!
+  const { firstName, lastName } = activeCustomer
+
+  async function logout() {
+    fetch('account/logout', {
+      method: 'POST',
+      body: JSON.stringify({}),
+    })
+  }
 </script>
 
 <div class="max-w-6xl xl:mx-auto px-4">
@@ -13,7 +20,7 @@
     Welcome back, {firstName}
     {lastName}
   </p>
-  <form>
+  <form on:submit|preventDefault={logout}>
     <input type="hidden" name="action" value="logout" />
     <button
       type="submit"

@@ -11,6 +11,7 @@
   import { userLocale } from '../stores/locale'
   import Header from '$lib/components/header/header.svelte'
   import StripeProvider from '$lib/stripe/stripe-provider.svelte'
+  import { cartOpen } from '$stores/cart'
 
   export let data
   $: ({ key } = data)

@@ -87,6 +87,7 @@
         class="box-content py-2 px-2 relative overflow-x-auto xl:overflow-visible"
       >
         <div
+          data-sveltekit-prefetch
           class="grid justify-items-center grid-cols-2 md:grid-cols-3 gap-y-8 gap-x-8 sm:px-6 lg:px-8 xl:relative xl:px-0 xl:space-x-0 xl:gap-x-8"
         >
           {#each collections as collection}

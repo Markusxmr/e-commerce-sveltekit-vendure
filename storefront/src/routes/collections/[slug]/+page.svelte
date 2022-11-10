@@ -63,7 +63,7 @@
 
   <Breadcrumbs items={collection?.breadcrumbs} />
 
-  {#if collection?.children}
+  {#if collection?.children?.length > 0}
     <div
       class="max-w-2xl mx-auto py-16 sm:py-16 lg:max-w-none border-b mb-16"
     >
@@ -78,7 +78,10 @@
     </div>
   {/if}
 
-  <div class="mt-6 grid sm:grid-cols-5 gap-x-4">
+  <div
+    class="mt-6 grid sm:grid-cols-5 gap-x-4"
+    data-sveltekit-prefetch
+  >
     <!-- <FacetFilterControls
         facetFilterTracker={facetValuesTracker.current}
         mobileFiltersOpen={mobileFiltersOpen}

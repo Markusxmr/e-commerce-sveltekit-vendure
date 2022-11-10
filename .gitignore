@@ -1,6 +1,7 @@
 node_modules
 .vercel
 .pnpm-debug.log
+e-commerce/storefront-remix
 e-commerce/server/.env
 e-commerce/server/.env.production
 e-commerce/server/yarn-error.log

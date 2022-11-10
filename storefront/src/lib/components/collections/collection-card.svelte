@@ -1,5 +1,6 @@
 <script lang="ts">
   import Link from '../link.svelte'
+
   export let collection
 </script>
 
